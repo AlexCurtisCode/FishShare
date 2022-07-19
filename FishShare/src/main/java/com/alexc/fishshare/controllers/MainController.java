@@ -137,7 +137,8 @@ public class MainController {
 	@PutMapping("/fish/edit/{id}")
 	public String updateFish(@Valid @ModelAttribute("fish") Fish fish, BindingResult result, Model model, HttpSession session) {
 		if(result.hasErrors()) {
-			return "redirect:/fish/edit/" + fish.getId();
+			model.addAttribute("fish", fish);
+			return "EditFish.jsp";
 		}
 		fish.setCreator(userServ.findUser((Long)session.getAttribute("userId")));
 		fishServ.updateFish(fish);
@@ -172,8 +173,11 @@ public class MainController {
 	}
 	@PostMapping("/fish/{id}/comment")
 	public String addComment(@PathVariable("id") Long id, @Valid @ModelAttribute("newComment") Comment newComment, BindingResult result, Model model, HttpSession session) {
+		Fish fish = fishServ.findFish(id);
 		if(result.hasErrors()) {
-			return "redirect:/fish/" + id;
+			model.addAttribute("fish", fish);
+			model.addAttribute("comments", fish.getComments());
+			return "FishPage.jsp";
 		}
 		comServ.createComment(newComment, userServ.findUser((Long)session.getAttribute("userId")), fishServ.findFish(id));
 		return "redirect:/fish/" + id;
