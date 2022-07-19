@@ -1,0 +1,82 @@
+img {
+	margin: 15px;
+	border-radius: 15px;
+}
+* {
+	font-family: Copperplate, fantasy;
+}
+
+#login-head {
+	padding: 15px;
+	border-radius: 15px;
+	background-color: cadetblue;
+}
+
+#register {
+	padding: 15px;
+}
+
+#login {
+	padding: 15px;
+}
+
+#login-background {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.container {
+	height: 800px;
+}
+
+.card-body {
+	flex-direction: column;
+}
+.content-body {
+	padding: 10px;
+}
+
+.page-title {
+	padding: 15px;
+}
+.new-fish {
+	width: 800px;
+	margin: auto;
+}
+#comment-card {
+	width: 800px;
+}
+#comments {
+	height: 300px;
+}
+.comment-user {
+	height: 0px;
+}
+.single-comment {
+	padding: 15px;
+}
+#user-card {
+	padding-right: 15px;
+}
+#like {
+	height: 0;
+}
+#post-header {
+	background-color: cadetblue;
+}
+.form-section {
+	margin-top: 10px;
+}
+.display-card {
+	height: 600px;
+}
+.feed-card {
+	height: 1000px;
+}
+.card-content {
+	padding-bottom: 25px;
+}
+.login-table {
+	width: 500px;
+	margin-top: 50px;
+}
